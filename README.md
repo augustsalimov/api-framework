@@ -10,4 +10,4 @@ How to install and run framework?
 2) Open file and install virtual environment: python3 -m venv env
 3) Activate virtual environment: source env/bin/activate
 4) Install all requirements:  pip install -r requirements.txt
-5) Run framework: python3 -m pytest -s lib/base_case.py
+5) Run test: python3 -m pytest -s tests/test_user_auth.py

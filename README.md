@@ -1,6 +1,8 @@
 # api-framework
 
-Api automation testing framework in python
+Framework for REST API automation testing in python
+
+Stack: python, requests, pytest
 
 How to install and run framework?
 

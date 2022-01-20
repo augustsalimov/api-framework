@@ -1,9 +1,10 @@
 /vir/
-.idea/
+.idea/*
 .idea
 idea
 /.idea
 /idea
 logs/*
 __pycache__
-/__pycache__/
+/__pycache__/*
+__pycache__/*

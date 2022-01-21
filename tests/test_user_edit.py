@@ -1,9 +1,11 @@
+import allure
 import requests
 from lib.base_case import BaseCase
 from lib.assertions import Assertions
 
 
 class TestUserEdit(BaseCase):
+    @allure.story('1st story')
     def test_edit_created_user(self):
         # REGISTER
         register_data = self.prepare_registration_data()
@@ -76,6 +78,7 @@ class TestUserEdit(BaseCase):
 
         Assertions.assert_code_status(response2, 400)
 
+    @allure.story('2st story')
     def test_edit_another_authorized_user(self):
         # REGISTER
         register_data = self.prepare_registration_data()

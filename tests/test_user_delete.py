@@ -92,11 +92,20 @@ class TestUserDelete(BaseCase):
         token = self.get_header(response2, "x-csrf-token")
 
         # DELETE
-        another_id = str(int(user_id)-100)
+        another_id = 1001
         response3 = requests.delete(
-            F"https://playground.learnqa.ru/api/user/{another_id}",
+            f"https://playground.learnqa.ru/api/user/{another_id}",
+            headers={"x-csrf-token": token},
+            cookies={"auth_sid": auth_sid}
+        )
+        Assertions.assert_code_status(response3, 200)
+
+        # GET
+        response4 = requests.get(
+            f"https://playground.learnqa.ru/api/user/{another_id}",
             headers={"x-csrf-token": token},
             cookies={"auth_sid": auth_sid}
         )
 
-        Assertions.assert_code_status(response3, 200)
+        Assertions.assert_code_status(response4, 200)
+        assert response4.text == '{"username":"learnqa"}'
